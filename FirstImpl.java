@@ -10,7 +10,7 @@ public class FirstImpl extends UnicastRemoteObject implements First
 	{
 	//	throw new RemoteException();
 	}
-	public void cmpr(String s1,String s2)throws RemoteException
+	public int cmpr(String s1,String s2)throws RemoteException
  	{
 		int l=s1.length();
 		int l2=s2.length();
@@ -25,24 +25,25 @@ public class FirstImpl extends UnicastRemoteObject implements First
 				c=0;	
 			}
 		}
-		if(c!=0)
+		return c;
+		/*if(c!=0)
 		{
 			System.out.println("Strings are equal");
-		}
-		else
-		{
-			System.out.println("strings are not equal");
-		}
-		if(l>l2)
+		}*/
+		//else
+		/*{
+		      System.out.println("strings are not equal");
+		}*/
+		/*if(l>l2)
 		{
 			System.out.println("large string: "+s1);
-		}
-		else
-		{
+		}*/
+		//else
+		/*{
 			System.out.println("large string:"+s2);
-		}
+		}*/
 	}
-	public void rvs(String s1)throws RemoteException
+	public String rvs(String s1)throws RemoteException
 	{
 		String rev="";
 		int l=s1.length();
@@ -50,19 +51,26 @@ public class FirstImpl extends UnicastRemoteObject implements First
 		{
 			rev=rev+s1.charAt(i);//aading character in reverse order to string rev
 		}
-		System.out.println("Reverse:"+rev);
+		return rev;
 	}
-	public void ct(String s1,String s2)throws RemoteException
+	public String ct(String s1,String s2)throws RemoteException
 	{
 		s1=s1+s2;
-		System.out.println("new String:"+s1);
+		return s1;
 	}
-	public void cs(String s1,String s2)throws RemoteException
+	public String lcs(String s1)throws RemoteException
 	{
 		s1=s1.toLowerCase();
-		System.out.println("lowercase of first string:"+s1);
-		s2=s2.toUpperCase();
-		System.out.println("uppercase of second string:"+s2);
+		return s1;
+	}
+	public String ucs(String s1)throws RemoteException
+	{
+		s1=s1.toUpperCase();
+	 	return s1;
+	}
+	public void close()
+	{
+		System.exit(1);
 	}
 	
 }
