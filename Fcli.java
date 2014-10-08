@@ -8,9 +8,9 @@ public class Fcli
 	{
 		try
 		{
-		First a=(First)Naming.lookup("//192.168.0.12/hello");
+		First a=(First)Naming.lookup("//192.168.1.33/hello");
 		InputStreamReader isr=new InputStreamReader(System.in);
-	//	System.out.println("1-compare 2-reverse 3-concatinate 4-lowercase 5-uppercase 6-");
+	//	System.out.println("1-compare 2-reverse 3-concatenate 4-lowercase 5-uppercase 6-exit");
 	//	System.out.println("enter the choice:");
 		BufferedReader br=new BufferedReader(isr);
 	//	int c=Integer.parseInt(br.readLine());
@@ -29,8 +29,7 @@ public class Fcli
                // BufferedReader br=new BufferedReader(isr);
                 int c=Integer.parseInt(br.readLine());
 	         String r;
-                int g;
-
+                          int g;
 		switch(c)
 		{
 			case 1:System.out.println("enter first string:");
@@ -40,12 +39,15 @@ public class Fcli
 			//	BufferedReader br=new BufferedReader(isr);
 				String s2=br.readLine();
 				g=a.cmpr(s1,s2);
-				if(g!=0)
+				if(g==1)
 				{
-					System.out.println("strings are equal");				}
+					System.out.println("strings are equal");		
+				}
 				else
+				{
 					System.out.println("strings are not equal");
-			       break;
+				}
+			       	break;
 			case 2:System.out.println("enter the string to be reversed:");
 				//BufferedReader br3=new BufferedReader(isr);
 				String s3=br.readLine();

@@ -12,36 +12,16 @@ public class FirstImpl extends UnicastRemoteObject implements First
 	}
 	public int cmpr(String s1,String s2)throws RemoteException
  	{
-		int l=s1.length();
-		int l2=s2.length();
-		int c=0;
-		if(l==l2)//checking length of strings
+		int c;
+		if(s1.equals(s2))
 		{
-			for(int i=0;i<=l;i++)
-			{
-				if(s1.charAt(i)==s2.charAt(i))//checking each character in strings
-				c++;
-				else
-				c=0;	
-			}
+			c=1;	
+		}
+		else
+		{
+			c=0;
 		}
 		return c;
-		/*if(c!=0)
-		{
-			System.out.println("Strings are equal");
-		}*/
-		//else
-		/*{
-		      System.out.println("strings are not equal");
-		}*/
-		/*if(l>l2)
-		{
-			System.out.println("large string: "+s1);
-		}*/
-		//else
-		/*{
-			System.out.println("large string:"+s2);
-		}*/
 	}
 	public String rvs(String s1)throws RemoteException
 	{
